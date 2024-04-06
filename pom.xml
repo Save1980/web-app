@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>JOMACS Releases Nexus Repository</name>
-	      <url>http://13.53.98.220:8081/repository/webapp-project-release/</url>
+	      <url>http://13.53.98.220:8081/repository/webabb-project-snapshot/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>JOMACS Snapshot Nexus Repository </name>
-	      <url>http://13.53.98.220:8081/repository/webabb-project-snapshot/</url>
+	      <url>http://13.53.98.220:8081/repository/webapp-project-release/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
