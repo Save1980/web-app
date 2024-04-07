@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>JOMACS Snapshot Nexus Repository </name>
-	      <url>http://13.53.98.220:8081/repository/webapp-snapshot2/</url>
+	      <url>http://13.53.98.220:8081/repository/webapp-snapshot1/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
