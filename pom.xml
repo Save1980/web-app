@@ -97,7 +97,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>JOMACS Releases Nexus Repository</name>
-	      <url>http://13.53.98.220:8081/repository/webabb-release1/</url>
+	      <url>http://13.53.98.220:8081/repository/webapp-release1/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
