@@ -1,0 +1,50 @@
+pipeline{
+    agent any
+    tools{
+        maven "Maven 3.9.6"
+    }
+    stages{
+        stage("Git clone") {
+            steps{
+                git branch: 'main', url: 'https://github.com/Save1980/web-app.git'
+            }
+        }
+
+        stage ("Build with maven") {
+            steps{
+                sh "mvn clean"
+            }
+        }
+        stage ("Testing with Maven") {
+            steps{
+                sh "mvn test"
+            }
+        }
+        stage ("Packaging with Maven") {
+            steps{
+                sh "mvn package"
+            }
+        }
+        stage("SONARQUBE ANALYSIS") {
+            environment{
+                ScannerHome = tool 'sonar5.0'
+            }
+            steps{
+                script{
+                    withSonarQubeEnv('sonarqube') {
+                        sh "${ScannerHome}/bin/sonar-scanner -Dsonar.projectKey=Jomacs"
+                    }
+                }
+            }
+
+        }
+        stage("Upload to NEXUS"){
+                steps{
+                    nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/first-pipeline-job-in-jenkins/target/web-app', type: 'war']], credentialsId: 'Nexus-ID', groupId: 'com.mt', nexusUrl: '13.49.224.31:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'webapp-snapshot', version: '3.1.2-SNAPSHOT'
+                }
+        }
+
+        }
+    }
+    
+
