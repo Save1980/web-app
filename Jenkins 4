@@ -40,7 +40,7 @@ pipeline{
         }
         stage("Upload to NEXUS"){
                 steps{
-                    nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/first-pipeline-job-in-jenkins/target/web-app', type: 'war']], credentialsId: 'Nexus-ID', groupId: 'com.mt', nexusUrl: '13.49.224.31:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'webapp-snapshot', version: '3.1.2-SNAPSHOT'
+                  nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/var/lib/jenkins/workspace/first-pipeline-job-in-jenkins/target/web-app', type: 'war']], credentialsId: 'nexus-id2', groupId: 'com.mt', nexusUrl: '13.51.13.71:8081/', nexusVersion: 'nexus3', protocol: 'http', repository: 'webapp-snapshot', version: '3.1.2-SNAPSHOT'
                 }
         }
 
